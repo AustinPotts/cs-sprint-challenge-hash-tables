@@ -10,7 +10,7 @@ def intersection(arrays):
                 store[j] += 1
             else:
                 store[j] = 1
-    result = [data[0] for data in store.items() if data[1] == len(arrays)]
+    result = [data[0] for data in store.items() if data[1] == len(arrays)] #[thing for thing in list_of_things]
 
     return result
 
