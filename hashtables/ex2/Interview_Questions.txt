@@ -1,0 +1,33 @@
+1. Hashing functions
+2. Collision resolution
+3. Performance of basic hash table operations
+4. Load factor
+5. Automatic resizing
+6. Various use cases for hash tables
+
+
+1. A hashing function will take in a string & turn it into a hash value number (DJB2 or FNV1). 
+   This will help when we use our hash index.. 
+   We have a function that takes that number & make's sure it fits in our list, finds index spot (hash_index) aka SLOT
+   "Bear" -> 2
+
+2. Collision Resolution is the implementation of chaining, 
+   if both "Bear" and "Pig" hash to index 7, they can both still be found there
+   As the Load Factor of your hash table increases, so does the likelihood of a collision
+
+3. The Performance of basic hash table operations are O(1) Get,Put,Delete
+
+4. The Load Factor is the number of things stored in the hash table / number of slots in the array
+   If the load factor becomes too large (anything over 0.7) collisons can occur, 
+   the load factor can also be too small,
+   Therefore, you need to monitor the load factor and resize your hash table when the load factor gets too large  
+
+5. If the hash table is overloaded, resisze the hash table
+   Resizing is an expensive operation, so you don’t want to resize too often. 
+   However, when we average it out, hash tables are constant time (O(1)) even with resizing.
+   ( if self.get_load_factor() > 0.7: )
+
+6. A few use cases for hash table implemtation would be: 
+   Searching for elements within a large data set.
+   Finding duplicate elements in a data set
+   Quickly store and retrieve elements from a large data set
