@@ -5,10 +5,19 @@ class Ticket:
         self.destination = destination
 
 
-def reconstruct_trip(tickets, length):
+def reconstruct_trip(tickets, length): # Def takes in tickets & length 
     """
     YOUR CODE HERE
     """
-    # Your code here
+    route = [None] * length 
+
+    store = dict() # Create dictionary 
+    for ticket in tickets: # iterate over tickets, if ticket then store 
+        store[ticket.source] = ticket.destination
+    next = store["NONE"]
+
+    for current in range(0, length): # for current in range
+        route[current] = next
+        next = store[next]
 
     return route
